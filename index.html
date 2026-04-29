@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>APK 下載</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+body{background:#0a0a0f;color:#e2e8f0;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
+.card{background:#13131a;border:1px solid #1e1e2e;border-radius:24px;padding:40px 36px;max-width:360px;width:100%;text-align:center}
+h1{font-size:24px;color:#fff;margin-bottom:8px}
+p{color:#64748b;font-size:13px;margin-bottom:24px}
+.qr{background:#fff;border-radius:16px;padding:16px;display:inline-block;margin-bottom:24px}
+a{display:block;padding:14px;background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;text-decoration:none;border-radius:12px;font-weight:700;margin-bottom:16px}
+.tip{background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.15);border-radius:10px;padding:12px;font-size:12px;color:#67e8f9;text-align:left}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>掃碼下載安裝</h1>
+<p>用手機掃描二維碼即可下載 APK</p>
+<div class="qr"><div id="qr"></div></div>
+<a href="https://github.com/suux0001/myapp/releases/download/v1.0.0/a7f3k9x2.apk">📥 點擊下載 APK</a>
+<div class="tip">⚠️ 安裝前請在設定中允許「安裝未知應用」</div>
+</div>
+<script>
+new QRCode(document.getElementById("qr"),{text:"https://github.com/suux0001/myapp/releases/download/v1.0.0/a7f3k9x2.apk",width:200,height:200,colorDark:"#000",colorLight:"#fff"});
+</script>
+</body>
+</html>
