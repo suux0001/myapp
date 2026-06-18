@@ -1,30 +1,103 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>APK 下載</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>掃碼下載安裝</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
-body{background:#0a0a0f;color:#e2e8f0;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
-.card{background:#13131a;border:1px solid #1e1e2e;border-radius:24px;padding:40px 36px;max-width:360px;width:100%;text-align:center}
-h1{font-size:24px;color:#fff;margin-bottom:8px}
-p{color:#64748b;font-size:13px;margin-bottom:24px}
-.qr{background:#fff;border-radius:16px;padding:16px;display:inline-block;margin-bottom:24px}
-a{display:block;padding:14px;background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;text-decoration:none;border-radius:12px;font-weight:700;margin-bottom:16px}
-.tip{background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.15);border-radius:10px;padding:12px;font-size:12px;color:#67e8f9;text-align:left}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0d0d;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, 'PingFang TC', sans-serif;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 40px 32px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  h1 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .sub {
+    color: #888;
+    font-size: 13px;
+    margin-top: -16px;
+  }
+  #qrcode {
+    background: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .notice {
+    width: 100%;
+    background: #2a2000;
+    border: 1px solid #554400;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #f5c542;
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
 </style>
 </head>
 <body>
 <div class="card">
-<h1>掃碼下載安裝</h1>
-<p>用手機掃描二維碼即可下載 APK</p>
-<div class="qr"><div id="qr"></div></div>
-<a href="https://github.com/suux0001/myapp/releases/download/v1.0.0/a7f3k9x2.apk">📥 點擊下載 APK</a>
-<div class="tip">⚠️ 安裝前請在設定中允許「安裝未知應用」</div>
+  <h1>掃碼下載安裝</h1>
+  <p class="sub">用手機掃描二維碼即可下載 APK</p>
+  <div id="qrcode"></div>
+  <a class="btn" href="https://github.com/suux0001/myapp/raw/main/ASDFGH.apk" download>
+    📲 點擊下載 APK
+  </a>
+  <div class="notice">
+    <span>⚠️</span>
+    <span>安裝前請在設定中允許「安裝未知應用」</span>
+  </div>
 </div>
+
 <script>
-new QRCode(document.getElementById("qr"),{text:"https://github.com/suux0001/myapp/releases/download/v1.0.0/a7f3k9x2.apk",width:200,height:200,colorDark:"#000",colorLight:"#fff"});
+  const apkUrl = "https://github.com/suux0001/myapp/raw/main/ASDFGH.apk";
+  new QRCode(document.getElementById("qrcode"), {
+    text: apkUrl,
+    width: 220,
+    height: 220,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
 </script>
 </body>
 </html>
